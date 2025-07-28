@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Webpage - July 27</title>
+</head>
+ <body>
+  
+    <table border="1" cellspacing="0" cellpadding="5" width="100%" height="100" >
+        <caption >Jan's Spring Term 2006 Afternoon Schedule</caption>
+        <thead>
+            <tr>
+                <td>      </td>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1:00</td>
+                <td rowspan="2" style="background-color: #e2f0d9;">Office</td>
+                <td></td>
+                <td rowspan="2" style="background-color: #e2f0d9;">Office</td>
+                <td rowspan="8" style="background-color: #f9d5e5;">Office Hours by appt</td>
+                <td rowspan="2" style="background-color: #e2f0d9;">Office</td>
+            </tr>
+            <tr>
+                <td>1:30</td>
+                <td rowspan="2" style="background-color: #ffe6cc;"> Dept Meeting</td>
+            </tr>
+            <tr>
+                <td>2:00</td>
+                <td rowspan="3" style="background-color: #d1e7ff;">MAT 108</td>
+                <td rowspan="3" style="background-color: #d1e7ff;">MAt 108</td>
+                <td rowspan="3" style="background-color: #d1e7ff;">MAt 108</td>
+               
+            </tr>
+            <tr>
+                <td>2:30</td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td>3:00</td>
+                <td rowspan="3" style="background-color: #ffe6cc;">EC Meeting</td>
+                
+              
+            </tr>
+            <tr>
+                <td>3:30</td>
+                <td rowspan="3" style="background-color: #fff4cc;">CSC 205</td>
+                <td rowspan="3" style="background-color: #fff4cc;">CSE 205</td>
+                <td rowspan="3" style="background-color: #fff4cc;">CSE 205</td>
+                
+            </tr>
+            <tr>
+                <td>4:00</td>
+            </tr>
+            <tr>
+                <td>4:30</td>
+                <td></td>
+            </tr>
+        </tbody>
+        <tfoot>
+        </tfoot>
+    </table>
+ </body>
+
+ </html>
