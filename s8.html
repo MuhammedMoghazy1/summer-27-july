@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pizza Hub</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fff;
+      color: #fff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background-color: #fff;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      color: red;
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #000;
+      font-weight: 600;
+    }
+
+    .contact-btn {
+      background-color: #ffc107;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .hero {
+      background-image: url('rs-sbg-px → rs-sbg-wrap → rs-sbg → image.png');
+      background-size: cover;
+      background-position: center;
+      height: 90vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .hero-content {
+      max-width: 50%;
+    }
+
+    .hero h1 {
+      font-size: 50px;
+      font-weight: 800;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 16px;
+      color: #ccc;
+      margin: 20px 0;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .btn-primary {
+      background-color: #ff1e1e;
+      color: #fff;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn-video {
+      background-color: transparent;
+      border: 2px solid #fff;
+      padding: 10px 18px;
+      border-radius: 50%;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .food-card {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      background-color: #000;
+      border: 2px solid #ff1e1e;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      width: 180px;
+    }
+
+    .food-card h3 {
+      color: #fff;
+      font-size: 16px;
+      margin: 5px 0;
+    }
+
+    .food-card .price {
+      color: #ffc107;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .food-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 10px 0;
+    }
+
+    .stars {
+      color: #ffc107;
+    }
+
+    .badge {
+      background-color: #ff1e1e;
+      color: #fff;
+      padding: 2px 8px;
+      font-size: 12px;
+      border-radius: 4px;
+      position: absolute;
+      top: -10px;
+      right: -10px;
+    }
+
+    
+.menu-selection {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #fff;
+  padding: 50px 20px;
+}
+
+.menu-box {
+  width: 180px;
+  height: 200px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  padding: 25px 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-box img {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 15px;
+}
+
+.menu-box p {
+  font-weight: bold;
+  color: #000;
+  font-size: 18px;
+  margin: 0;
+}
+
+.menu-box.active {
+  background-color: #ff1e1e;
+  color: #fff;
+}
+
+.menu-box.active p {
+  color: #fff;
+}
+
+ 
+.menu-box:nth-child(1):hover {
+  background-color:  #ff1e1e ;  
+  color: #fff;
+}
+.menu-box:nth-child(2):hover {
+  background-color: #ff1e1e;  
+  color: #fff;
+}
+.menu-box:nth-child(3):hover {
+  background-color: #ff1e1e;  
+  color: #fff;
+}
+.menu-box:nth-child(4):hover {
+  background-color: #ff1e1e; 
+  color: #fff;
+}
+
+.menu-box:hover p {
+  color: #fff;
+}
+ .bbq-menu {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  color: #fff;
+  padding: 50px 40px;
+  gap: 40px;
+}
+
+.bbq-menu img {
+  width: 320px;
+  height: auto;
+  border: 2px solid #fff;
+  border-radius: 10px;
+}
+
+.bbq-details {
+  flex: 1;
+}
+
+.bbq-details h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.bbq-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px dashed #aaa;
+}
+
+.bbq-item:last-child {
+  border-bottom: none;
+}
+
+.bbq-item h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.bbq-item p {
+  margin: 5px 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.price {
+  color: #ff1e1e;
+  font-weight: bold;
+  margin-left: 15px;
+}
+ 
+  .discover-section {
+  padding: 60px 40px;
+  text-align: center;
+  background-color: #fff;
+  color: #000;
+}
+
+.discover-title {
+  font-size: 40px;
+  font-weight: 800;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+.discover-title::after {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 6px;
+  background-color: #ffc107;
+  border-radius: 3px;
+  margin: 10px auto 0;
+}
+
+.menu-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.menu-card {
+  background-color: #fff;
+  color: #fff;
+  border-radius: 20px;
+  width: 320px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+.menu-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.menu-text {
+  padding: 20px;
+}
+
+.menu-text h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.menu-text {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+   
+  padding: 15px;
+  border-radius: 10px;
+}
+
+
+.price-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2;
+  background-color: #ffc107;
+  color: #b30000;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+.price-badge span {
+  font-size: 12px;
+  text-transform: lowercase;
+}
+.reservation-section {
+  background-image: url('031217aa25758ff7087e5f341e284ad34c0d2f29.jpg');  
+  background-size: cover;
+  background-color: #fff;
+  background-position: center;
+  padding: 50px 20px;
+  border-radius: 20px;
+  margin: 40px;
+  color: #fff;
+}
+
+.reservation-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.reservation-text {
+  flex: 1;
+  min-width: 220px;
+}
+
+.reservation-text h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 10px;
+}
+
+.reservation-text p {
+  font-size: 14px;
+  color: #fff;
+}
+
+.reservation-form {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.reservation-form input {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.reservation-form button {
+  grid-column: span 2;
+  justify-self: end;
+  padding: 12px 25px;
+  background-color: #ffc107;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 3px 3px 0 #ff1e1e;
+  transition: 0.2s ease-in-out;
+}
+
+.reservation-form button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #ff1e1e;
+}
+.featured-dishes {
+  background-color: #f5f7fa;
+  padding: 60px 40px;
+  text-align: center;
+  color: #000;
+  font-family: 'Arial', sans-serif;
+}
+
+.featured-dishes h2 {
+  font-size: 32px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  font-family: 'Arial Black', Gadget, sans-serif;
+}
+
+.featured-dishes h2::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 5px;
+  background-color: #ffc107;
+  margin: 8px auto 40px;
+  border-radius: 10px;
+}
+
+.dishes-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.dish-card {
+  background: #fff;
+  border: 3px solid #ffc107;
+  border-radius: 15px;
+  width: 280px;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.dish-card:hover {
+  box-shadow: 0 8px 20px rgba(255, 193, 7, 0.5);
+}
+
+.sale-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #ffc107;
+  color: #000;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 30px;
+  letter-spacing: 1px;
+  z-index: 10;
+  user-select: none;
+}
+
+.dish-image-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 20px auto;
+}
+
+.dish-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 20;
+  border-radius: 50%;
+  background: white;
+  padding: 10px;
+}
+
+.red-ellipse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 100px;
+  background: #e91e63;
+  border-radius: 60% / 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.dish-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  color: #000;
+}
+
+.dish-info h3 {
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0;
+  flex: 1;
+  text-align: left;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #b0b0b0;
+  margin-right: 6px;
+}
+
+.new-price {
+  color: #ff1e1e;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.add-cart {
+  background: #ffc107;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.add-cart:hover {
+  background-color: #ffb300;
+}
+
+.pagination {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #d3d3d3;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background: #ff1e1e;
+}
+.testimonials {
+  background-color: #fff;
+  padding: 60px 40px;
+  color: #000;
+  font-family: 'Arial', sans-serif;
+}
+
+.testimonials p.section-label {
+  color: #ff1e1e;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.testimonials h2 {
+  font-size: 36px;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+
+.testimonials-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.testimonial-box {
+  flex: 1 1 300px;
+  border: 2px solid #ffc107;
+  border-radius: 15px;
+  padding: 30px;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.testimonial-box p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.testimonial-box strong {
+  display: block;
+  margin-top: 20px;
+  font-weight: 700;
+  color: #000;
+}
+
+.testimonial-dot {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: #ffc107;
+  border-radius: 50%;
+}
+
+.testimonial-images {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.testimonial-images-row {
+  display: flex;
+  gap: 20px;
+}
+
+.testimonial-images img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.image-placeholder {
+  background-color: rgba(255, 0, 0, 0.2);
+  width: 140px;
+  height: 140px;
+  border-radius: 15px;
+}
+
+.testimonial-pagination {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.testimonial-pagination span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #ccc;
+}
+
+.testimonial-pagination .active {
+  background-color: #ff1e1e;
+}
+
+.experts {
+  background-color: #fff;
+  padding: 200px 150px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  color: #000;
+}
+
+.experts h2 {
+  font-size: 36px;
+  font-weight: 900;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 60px;
+}
+
+.experts h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 5px;
+  background-color: #ffd700;
+  margin: 10px auto 0;
+  border-radius: 10px;
+}
+
+.expert-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.expert-card {
+  position: relative;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  padding-top: 130px;
+  text-align: center;
+}
+
+.expert-image {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.expert-role {
+  color: #ff1e1e;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.expert-name {
+  font-weight: 700;
+  font-size: 18px;
+  margin: 5px 0 10px;
+}
+
+.expert-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.expert-icons span {
+  width: 12px;
+  height: 12px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.expert-signature {
+  margin-top: -100px;
+  height: 200px;
+  object-fit: contain;
+}
+.news-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.section-title {
+  color: #000;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background: #FFD700;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.news-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.news-card {
+    color: #000;
+  width: 250px;
+  text-align: left;
+}
+
+.news-card img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.news-date {
+  display: inline-block;
+  background-color: #FFD700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.news-card h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+
+.author img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.footer {
+  background: #f9fbfd url('55bf413e-afbb-4753-8b00-e8ba285850b5.png') no-repeat center;
+  background-size: cover;
+  padding: 50px 20px 20px;
+  font-family: Arial, sans-serif;
+  color: #000;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-box {
+  flex: 1 1 220px;
+  margin: 20px;
+}
+
+.footer-box h3 {
+  background: #e31b6d;
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  font-size: 1.2em;
+}
+
+.footer-box h3 span {
+  font-weight: normal;
+  font-size: 0.8em;
+}
+
+.company-info p {
+  margin: 10px 0;
+}
+
+.company-info .closed {
+  font-weight: bold;
+  color: red;
+}
+
+.footer-box h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-bottom: 3px solid gold;
+  display: inline-block;
+  padding-bottom: 3px;
+}
+
+.footer-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-box ul li {
+  margin: 8px 0;
+}
+
+.footer-box ul li a {
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-box ul li a:hover {
+  text-decoration: underline;
+}
+
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+}
+
+.newsletter input[type="email"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.newsletter button {
+  background: #e31b6d;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background: #c2185b;
+}
+
+.footer-bottom {
+  border-top: 3px solid gold;
+  margin-top: 30px;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1200px;
+  margin: 30px auto 0;
+  font-size: 0.9em;
+}
+
+.footer-bottom span {
+  color: red;
+  font-weight: bold;
+}
+
+.footer-bottom .social-links a {
+  margin-left: 20px;
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-bottom .social-links a:hover {
+  text-decoration: underline;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="Logo-Pizza-Hut 2.png" alt="Pizza Hut Logo" style="height: 40px;" />
+    <div class="logo">pizza hut</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Shop</a>
+      <a href="#">Blog</a>
+      <a href="#">Pages</a>
+      <a href="#">Contact</a>
+    </nav>
+    <button class="contact-btn">Contact Us</button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>The Perfect Space to <br> Enjoy Fantastic Food</h1>
+      <p>Festive dining at Farthings where we are strong believers in using the very best produce</p>
+      <div class="buttons">
+        <button class="btn-primary">See Our Menus</button>
+        <button class="btn-video">▶</button>
+      </div>
+    </div>
+
+    <div class="food-card">
+      <div class="badge">Weekly Special</div>
+      <div class="price">$90.85</div>
+      <img src="star-box-150x150.png.png" alt="Sicilian Pizza" />
+      <h3>Sicilian Pizza</h3>
+      <div class="stars">★★★★★</div>
+    </div>
+  </section>
+
+  
+  <section style="background: #fff; color: #000; padding: 60px 40px;">
+    <div style="display: flex; flex-wrap: wrap; gap: 40px;">
+      <!-- Left Column -->
+      <div style="flex: 1 1 300px;">
+        <p style="color: #ff1e1e; font-weight: bold;">ABOUT THE FOOD RESTAURANT</p>
+        <h2 style="font-size: 36px; font-weight: 800; margin: 10px 0;">
+          New Ground with <br> Dishes to be <br> Enjoyed
+        </h2>
+      </div>
+
+      <div style="flex: 1 1 300px;">
+        <p style="line-height: 1.6; color: #666;">
+          Nisl quam vestibulum ac quam nec odio eleme aucan ligula. Orci varius natoque penatibus et urient montes nascete ridiculus mus. 
+          Nullam ac urna eu felis dapibus. Nisl quam vestibulum ac quam ligula.
+        </p>
+        <div style="display: flex; align-items: center; margin-top: 20px;">
+          <img src="author-80x80.jpg.png" alt="Willimes James" style="border-radius: 50%; width: 50px; height: 50px; margin-right: 15px;" />
+          <div>
+            <strong>Willimes James</strong><br>
+            <span style="font-size: 14px; color: #777;">Director and Chief Operations Officer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 50px;">
+      <div style="background: #000; border: 4px solid #ffc107; border-radius: 20px; overflow: hidden; width: 250px; text-align: center;">
+        <img src="Container (1).png" alt="Cocktail Bar" style="width: 100%; height: 220px; object-fit: cover;">
+        <div style="background: #ffc107; padding: 12px; font-weight: bold; font-size: 16px;">Cocktail Bar</div>
+      </div>
+
+      <div style="background: #000; border: 4px solid #ffc107; border-radius: 20px; overflow: hidden; width: 250px; text-align: center;">
+        <img src="Container (2).png" alt="Private Dining" style="width: 100%; height: 220px; object-fit: cover;">
+        <div style="background: #ffc107; padding: 12px; font-weight: bold; font-size: 16px;">Private Dining</div>
+      </div>
+      <div style="background: #000; border: 4px solid #ffc107; border-radius: 20px; overflow: hidden; width: 250px; text-align: center;">
+        <img src="Container.png" alt="Private Dining" style="width: 100%; height: 220px; object-fit: cover;">
+        <div style="background: #ffc107; padding: 12px; font-weight: bold; font-size: 16px;">Private Dining</div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="menu-selection">
+    <div class="menu-box active">
+      <img src="Background+Border.png" alt="Dessert">
+      <p>Dessert</p>
+    </div>
+    <div class="menu-box">
+      <img src="Background+Border (2).png" alt="Steak">
+      <p>Steak</p>
+    </div>
+    <div class="menu-box">
+      <img src="Background+Border (3).png" alt="Coffee">
+      <p>Coffee</p>
+    </div>
+    <div class="menu-box">
+      <img src="Background+Border (1).png" alt="Burger">
+      <p>Burger</p>
+    </div>
+  </section>
+<section class="bbq-menu">
+  <div>
+    <img src="image3.png.png" alt="BBQ Chicken">
+  </div>
+  <div class="bbq-details">
+    <h2>BBQ</h2>
+
+    <div class="bbq-item">
+      <div>
+        <h3>Sake BBQ sauce</h3>
+        <p>radish, black sesame seeds, coriander</p>
+      </div>
+      <span class="price">$9.00</span>
+    </div>
+
+    <div class="bbq-item">
+      <div>
+        <h3>BBQ baby back ribs</h3>
+        <p>sticky Asian glaze, charred lime, chili cashews</p>
+      </div>
+      <span class="price">$16.00</span>
+    </div>
+
+    <div class="bbq-item">
+      <div>
+        <h3>Half smoked chicken</h3>
+        <p>miso butter glaze, charred lime wedge, sake bbq</p>
+      </div>
+      <span class="price">$34.00</span>
+    </div>
+
+    <div class="bbq-item">
+      <div>
+        <h3>Dusted chicken wings</h3>
+        <p>tossed in Korean hot sauce, pickled radish</p>
+      </div>
+      <span class="price">$40.00</span>
+    </div>
+  </div>
+</section>
+<section class="discover-section">
+    <h2 class="discover-title">Discover Menu</h2>
+
+    <div class="menu-cards">
+      <div class="menu-card">
+        <img src="banner5.png.png" alt="Steaks & BBQ" class="menu-img">
+        <div class="menu-text">
+          <h3>Steaks & BBQ</h3>
+          <p>canonical classics to obscure tiki drinks</p>
+        </div>
+        <div class="price-badge">
+          $120<br><span>person</span>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="banner5.1.png.png" alt="Cocktails" class="menu-img">
+        <div class="menu-text">
+          <h3>Cocktails</h3>
+          <p>canonical classics to obscure tiki drinks</p>
+        </div>
+        <div class="price-badge">
+          $120<br><span>person</span>
+        </div>
+      </div>
+    </div>
+  </section>
+<section class="reservation-section">
+  <div class="reservation-container">
+    <div class="reservation-text">
+      <h2>RESERVE <br> A TABLE</h2>
+      <p>Discover our New Menu !</p>
+    </div>
+    <form class="reservation-form">
+      <input type="number" placeholder="No of Guest" required />
+      <input type="date" placeholder="Date" required />
+      <input type="time" placeholder="Time" required />
+      <input type="text" placeholder="Full Name" required />
+      <input type="tel" placeholder="Phone No" required />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</section>
+<section class="featured-dishes">
+  <h2>Featured Dishes</h2>
+  <div class="dishes-container">
+    <div class="dish-card">
+      <div class="sale-badge">SALE</div>
+      <div class="dish-image-wrapper">
+        <img src="image3.png.png" alt="Crispy Fried Chicken" />
+        <div class="red-ellipse"></div>
+      </div>
+      <div class="dish-info">
+        <h3>Crispy Fried Chicken</h3>
+        <p><span class="old-price">$14.85</span> <span class="new-price">$10.85</span></p>
+        <button class="add-cart" title="Add to Cart">🛒</button>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="sale-badge">SALE</div>
+      <div class="dish-image-wrapper">
+        <img src="product4.png.png" alt="Shroom Bacon Burger" />
+        <div class="red-ellipse"></div>
+      </div>
+      <div class="dish-info">
+        <h3>Shroom Bacon Burger</h3>
+        <p><span class="old-price">$21.76</span> <span class="new-price">$11.76</span></p>
+        <button class="add-cart" title="Add to Cart">🛒</button>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="sale-badge">SALE</div>
+      <div class="dish-image-wrapper">
+        <img src="product2-670x600.png.png" alt="Delicious Black Coffee" />
+        <div class="red-ellipse"></div>
+      </div>
+      <div class="dish-info">
+        <h3>Delicious Black Coffee</h3>
+        <p><span class="old-price">$21.76</span> <span class="new-price">$11.76</span></p>
+        <button class="add-cart" title="Add to Cart">🛒</button>
+      </div>
+    </div>
+  </div>
+  <div class="pagination">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+<section class="testimonials">
+  <p class="section-label">TESTIMONIALS & REVIEWS</p>
+  <h2>Our Customar <br> Feedbacks</h2>
+
+  <div class="testimonials-content">
+    <div class="testimonial-box">
+      <p>
+        A good restaurant is like a vacation; it transports you, and it becomes a lot more
+        than just about the food. All great deeds and all great thoughts
+      </p>
+      <strong>Bratlee Hamint</strong>
+      <div class="testimonial-dot"></div>
+    </div>
+
+    <div class="testimonial-images">
+      <div class="testimonial-images-row">
+        <img src="banner3-292x292.png.png" alt="Coffee" />
+         
+      </div>
+      <img src="banner1-292x292.png.png" alt="Dessert" />
+    </div>
+  </div>
+
+  <div class="testimonial-pagination">
+    <span class="active"></span>
+    <span></span>
+    <span></span>
+  </div>
+</section>
+<section class="experts">
+  <h2>Meet Our Experts</h2>
+
+  <div class="expert-cards">
+
+    <div class="expert-card">
+      <img src="Link.png" alt="Thomas Walim" class="expert-image" />
+      <div class="expert-role">Dessert specialist</div>
+      <div class="expert-name">Thomas Walim</div>
+      <div class="expert-icons">
+        <span></span><span></span><span></span>
+      </div>
+      <img src="Background+Border (4).png" alt="Signature" class="expert-signature" />
+    </div>
+
+    <div class="expert-card">
+      <img src="chef2.png.png" alt="James Jhonson" class="expert-image" />
+      <div class="expert-role">Chef Master</div>
+      <div class="expert-name">James Jhonson</div>
+      <div class="expert-icons">
+        <span></span><span></span><span></span>
+      </div>
+      <img src="Background+Border (5).png" alt="Signature" class="expert-signature" />
+    </div>
+
+    <div class="expert-card">
+      <img src="chef3-1.png.png" alt="Room Minal" class="expert-image" />
+      <div class="expert-role">Dessert specialist</div>
+      <div class="expert-name">Room Minal</div>
+      <div class="expert-icons">
+        <span></span><span></span><span></span>
+      </div>
+      <img src="Background+Border (6).png" alt="Signature" class="expert-signature" />
+    </div>
+
+  </div>
+</section>
+<div style= text-align: center; margin: 100px 100;>
+  <img src="Section.png" alt=" photo" style="width: 3000px; max-width: 100%;">
+</div>
+<section class="news-section">
+  <h2 class="section-title">Recent News</h2>
+  <div class="news-cards">
+    
+     
+    <div class="news-card">
+      <img src="Link (1).png" alt="Creamy Chicken Alfredo">
+      <span class="news-date">April 6, 2023</span>
+      <h3>Creamy Chicken Alfredo</h3>
+      <div class="author">
+        <img src="author-80x80.jpg.png" alt="Williams Thomas">
+        <span>Williams Thomas</span>
+      </div>
+    </div>
+
+     <div class="news-card">
+      <img src="Container (3).png" alt="Middle News">
+      <span class="news-date">August 5, 2025</span>
+      <h3>Delicious Pasta Recipe</h3>
+      <div class="author">
+        <img src="author-80x80.jpg.png" alt="New Author">
+        <span>Sarah Ahmed</span>
+      </div>
+    </div>
+  </div>
+</section>
+<div style= text-align: center; margin: 100px 100;>
+  <img src="Section (2).png" alt=" photo" style="width: 3000px; max-width: 100%; height: 40rem;">
+</div>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-box company-info">
+      <h3>pizza hut <br><span>pizza restaurant</span></h3>
+      <span> <p>Tuesday – Saturday: 12:00pm – 23:00pm</p></span>
+      <span><p class="closed">Closed on Sunday</p></span>
+      <span><p>5 star rated on TripAdvisor</p></span>
+    </div>
+
+    <div class="footer-box">
+      <h4>About</h4>
+      <ul>
+        <li><a href="#">Foodica One</a></li>
+        <li><a href="#">Special Dish</a></li>
+        <li><a href="#">Reservation</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-box">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="#">Steaks</a></li>
+        <li><a href="#">Burgers</a></li>
+        <li><a href="#">Cocktails</a></li>
+        <li><a href="#">Bar B Q</a></li>
+        <li><a href="#">Desserts</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-box newsletter">
+      <h4>Newsletter</h4>
+      <p>Get recent news and updates.</p>
+      <form>
+        <input type="email" placeholder="Email Address">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2024 <span>pizza hut</span> | All rights reserved</p>
+    <div class="social-links">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
