@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merto - Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                    <i class="fa-solid fa-phone"></i> Contact us 24/7
+                    <span>(+942) 3942 7879</span>
+                </div>
+                <div class="header-controls">
+                    <div class="dropdown">
+                        <span>English <i class="fa-solid fa-chevron-down"></i></span>
+                    </div>
+                    <div class="dropdown">
+                        <span>USD <i class="fa-solid fa-chevron-down"></i></span>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-user"></i> Account</a>
+                    <a href="#"><i class="fa-solid fa-heart"></i><span class="badge">0</span></a>
+                    <a href="#"><i class="fa-solid fa-shopping-cart"></i><span class="badge">3</span></a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container">
+                <a href="#" class="logo">Merto</a>
+                <div class="nav-links">
+                    <a href="#">Homepages <i class="fa-solid fa-chevron-down"></i></a>
+                    <a href="#" class="active">Categories <i class="fa-solid fa-chevron-down"></i></a>
+                    <a href="#">Products <i class="fa-solid fa-chevron-down"></i></a>
+                    <a href="#">Pages <i class="fa-solid fa-chevron-down"></i></a>
+                    <a href="#">About us</a>
+                    <a href="#">Blog</a>
+                    <a href="#" class="best-deal"><i class="fa-solid fa-tag"></i> Best Discount</a>
+                </div>
+                <div class="nav-search">
+                     <div class="search-bar">
+                        <select>
+                            <option>All Categories</option>
+                        </select>
+                        <input type="text" placeholder="Search for products">
+                        <button><i class="fa-solid fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="breadcrumbs">
+            <a href="#">Home</a> > <span>Shop</span>
+        </div>
+        <h1>Shop</h1>
+
+        <!-- Category Tabs -->
+        <div class="category-tabs">
+             <button class="active">Autoport</button>
+             <button>Beauty & Health</button>
+             <button>Electronic</button>
+             <button>Fashion</button>
+             <button>Game Accessories</button>
+             <button>Home & Decor</button>
+             <button>Laptop & Computer</button>
+             <button>Phone & Tablet</button>
+             <button>TV, Audio - Video</button>
+        </div>
+
+        <div class="shop-layout">
+            <!-- Sidebar Filters -->
+            <aside class="sidebar">
+                <div class="filter-group">
+                    <h3>Colors</h3>
+                    <ul class="filter-list colors">
+                        <li><span class="color-swatch" style="background-color: #000;"></span> Black <span class="count">95</span></li>
+                        <li><span class="color-swatch" style="background-color: #3b82f6;"></span> Blue <span class="count">11</span></li>
+                        <li><span class="color-swatch" style="background-color: #9f5842;"></span> Brown <span class="count">26</span></li>
+                        <!-- ... other colors -->
+                    </ul>
+                </div>
+                 <div class="filter-group">
+                    <h3>Brands</h3>
+                    <div class="brand-search">
+                        <input type="text" placeholder="Search brands...">
+                        <i class="fa-solid fa-search"></i>
+                    </div>
+                    <ul class="filter-list scrollable">
+                        <li><label><input type="checkbox" checked> Amazon <span class="count">(11)</span></label></li>
+                        <li><label><input type="checkbox"> Apple <span class="count">(11)</span></label></li>
+                        <li><label><input type="checkbox"> Ashley <span class="count">(3)</span></label></li>
+                         <li><label><input type="checkbox"> Asus <span class="count">(3)</span></label></li>
+                        <!-- ... other brands -->
+                    </ul>
+                </div>
+                <div class="filter-group">
+                    <h3>Price</h3>
+                     <ul class="filter-list">
+                        <li><label><input type="radio" name="price"> 0 - $100</label></li>
+                        <li><label><input type="radio" name="price"> $100 - $200</label></li>
+                        <li><label><input type="radio" name="price"> $200 - $500</label></li>
+                        <li><label><input type="radio" name="price"> $500+</label></li>
+                    </ul>
+                    <div class="price-inputs">
+                        <input type="text" placeholder="Min"> -
+                        <input type="text" placeholder="Max">
+                        <button>FILTER</button>
+                    </div>
+                </div>
+                 <div class="filter-group">
+                    <h3>Customer Rating</h3>
+                     <ul class="filter-list">
+                        <li><label><input type="checkbox"> <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span> <span class="count">(82)</span></label></li>
+                        <li><label><input type="checkbox"> <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></span> <span class="count">(40)</span></label></li>
+                        <!-- ... other ratings -->
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Product Grid -->
+            <section class="product-area">
+                <div class="toolbar">
+                    <label><input type="checkbox"> Show only products on sale</label>
+                    <div class="sort-options">
+                        Sort:
+                        <select>
+                            <option>Sort by latest</option>
+                        </select>
+                        <i class="fa-solid fa-bars"></i>
+                        <i class="fa-solid fa-grip"></i>
+                    </div>
+                </div>
+
+                <div class="product-grid">
+                    <!-- Product Card Example 1 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                             <img src="image/fashion-5-300x300 (1).jpg" alt="Sneaker Shoes">
+                             <span class="badge hot">HOT</span>
+                        </div>
+                        <h4 class="product-title">Nike Air Max Unisex SYSTM Men Sneaker Shoes</h4>
+                        <p class="product-price">$148</p>
+                    </div>
+
+                    <!-- Product Card Example 2 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                             <img src="image/electronic-30-5-300x300.jpg" alt="Apple MacBook Air">
+                        </div>
+                        <h4 class="product-title">Apple MacBook Air with Apple M1 Chip, 13.3 inch, 8GB RAM...</h4>
+                        <p class="product-price">$572</p>
+                    </div>
+                     <!-- Product Card Example 3 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                             <img src="image/cosmetics-34-300x300.jpg" alt="Sunscreen">
+                        </div>
+                        <h4 class="product-title">KUDRA Tinted Facial Sunscreen SPF 50+</h4>
+                        <p class="product-price">$14</p>
+                    </div>
+                     <!-- Product Card Example 4 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                             <img src="image/electronic-30-6-300x300.jpg" alt="Vivobook Laptop">
+                            <span class="badge discount">-35%</span>
+                        </div>
+                        <h4 class="product-title">Laptop Asus Vivobook i5 1355U, 8GB RAM, 512GB SSD</h4>
+                        <p class="product-price">$999 <span class="old-price">$1,536</span></p>
+                    </div>
+                     <!-- Product Card Example 5 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                             <img src="image/electronic-14-2-300x300.jpg" alt="Apple Watch">
+                            <span class="badge discount">-8%</span>
+                        </div>
+                        <h4 class="product-title">Apple Watch Series 9 GPS 45mm, Aluminum Case with...</h4>
+                        <p class="product-price">$690 <span class="old-price">$755</span></p>
+                    </div>
+                     <!-- Product Card Example 6 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                             <img src="image/furniture-6-300x300.jpg" alt="Lamp">
+                             <span class="badge hot">HOT</span>
+                        </div>
+                        <h4 class="product-title">Milo Brass And Black Metal Lamp D18cm x 30cm</h4>
+                        <p class="product-price">$82</p>
+                    </div>
+                     <!-- Product Card Example 7 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                             <img src="image/11-300x300.jpg" alt="iPad Mini">
+                        </div>
+                        <h4 class="product-title">Ipad Mini 6 A15 Bionic chip, 8.3 inch, 6th Gen, Wi-Fi, 64GB</h4>
+                        <p class="product-price">$450 - $650</p>
+                    </div>
+                     <!-- Product Card Example 8 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                             <img src="image/cat-6.jpg" alt="Jacket">
+                        </div>
+                        <h4 class="product-title">Winter New Jacket Loose Retro American Campus</h4>
+                        <p class="product-price">$160</p>
+                    </div>
+                </div>
+
+                <div class="pagination-area">
+                    <p>Showing 28 of 210 results</p>
+                    <button class="view-more">+ VIEW MORE</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="main-footer">
+            <div class="container">
+                <div class="footer-col about">
+                    <h2 class="logo">Merto</h2>
+                    <p><i class="fa-solid fa-location-dot"></i> 29 2nd Ave, Miami Florida 33131, United States</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@example.com</p>
+                    <p class="phone"><i class="fa-solid fa-phone"></i> (+92) 3942 7879</p>
+                </div>
+                <div class="footer-col">
+                    <h4>SHOPPING</h4>
+                    <ul>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Shop by Brand</a></li>
+                        <li><a href="#">Offers</a></li>
+                        <li><a href="#">Track order</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>INFORMATION</h4>
+                    <ul>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>ACCOUNT</h4>
+                    <ul>
+                        <li><a href="#">Cart</a></li>
+                        <li><a href="#">My account</a></li>
+                        <li><a href="#">My orders</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Affiliate Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col subscribe">
+                    <h4>Let's keep in touch</h4>
+                    <div class="subscribe-form">
+                        <input type="email" placeholder="enter your email address">
+                        <button><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#"><i class="fa-brands fa-xing"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sub-footer">
+            <div class="container">
+                <div class="sub-footer-item">
+                     <i class="fa-solid fa-headphones"></i>
+                     <div>
+                        <h4>Didn't find what you were looking for?</h4>
+                        <a href="#">Contact Us</a>
+                     </div>
+                </div>
+                 <div class="sub-footer-item">
+                     <i class="fa-regular fa-circle-question"></i>
+                     <div>
+                        <h4>How can we help you today?</h4>
+                        <a href="#">Help Center</a>
+                     </div>
+                </div>
+                 <div class="sub-footer-item">
+                     <i class="fa-regular fa-comments"></i>
+                     <div>
+                        <h4>We'd love to hear what you think!</h4>
+                        <a href="#">Give Feedback</a>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>Copyright © Merto. All Rights Reserved.</p>
+                <div class="payment-icons">
+                    <img src="image/payment-icons-1.png"Payment Methods">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
